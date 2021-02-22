@@ -3,39 +3,42 @@
 //  todo-list-app
 //
 //  Created by Ayokunle on 22/02/2021.
-//
 
 import UIKit
 
-class TodoListViewController: UIViewController {
+class HomePageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(viewTodoLists)
         view.addSubview(addNewTodoList)
         constraint()
+        
 
-        view.backgroundColor = #colorLiteral(red: 0.3098039216, green: 0.5333333333, blue: 0.568627451, alpha: 1)
-        navigationItem.title = "HOME"
+        view.backgroundColor = .white
+        navigationItem.title = "HOME PAGE"
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     let viewTodoLists: UIButton = {
         let viewLists = UIButton(type: .system)
-        viewLists.setTitle("View Todo Tasks", for: .normal)
+        viewLists.setTitle("View All Lists", for: .normal)
         viewLists.isEnabled = true
         viewLists.translatesAutoresizingMaskIntoConstraints = false
         viewLists.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         viewLists.layer.cornerRadius = 8
         viewLists.clipsToBounds = true
         viewLists.titleLabel?.font = UIFont(name: "Apple SD Gothic Neo Bold", size: 25)
-        viewLists.addTarget(self, action: #selector(viewList), for: .touchUpInside)
+//        viewLists.addTarget(self, action: #selector(viewList), for: .touchUpInside)
+        
+        viewLists.addTarget(self, action: #selector( viewList(_:) ), for: .touchUpInside)
         viewLists.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         return viewLists
     }()
     
     let addNewTodoList: UIButton = {
         let addNewList = UIButton(type: .system)
-        addNewList.setTitle("Add New Task", for: .normal)
+        addNewList.setTitle("Add New List", for: .normal)
         addNewList.isEnabled = true
         addNewList.translatesAutoresizingMaskIntoConstraints = false
         addNewList.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
@@ -52,21 +55,24 @@ class TodoListViewController: UIViewController {
     }
 
     
-    @objc func viewList() {
-        self.navigationController?.pushViewController(ViewListsViewController(), animated: true)
+    @objc func viewList(_ sender: Any) {
+        
+        let viewList = UINavigationController(rootViewController: TodoListTableViewController() )
+        present(viewList, animated: true, completion: nil)
+        
     }
     
     func constraint () {
         NSLayoutConstraint.activate([
             addNewTodoList.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            addNewTodoList.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
-            addNewTodoList.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1),
-            addNewTodoList.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+            addNewTodoList.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -40),
+            addNewTodoList.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065),
+            addNewTodoList.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
             
-            viewTodoLists.topAnchor.constraint(equalTo: addNewTodoList.bottomAnchor, constant: 20),
+            viewTodoLists.topAnchor.constraint(equalTo: addNewTodoList.bottomAnchor, constant: 40),
             viewTodoLists.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            viewTodoLists.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1),
-            viewTodoLists.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
+            viewTodoLists.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065),
+            viewTodoLists.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7)
         ])
     }
     
