@@ -16,7 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = TodoListViewController()
+        let navigationBar = UINavigationController(rootViewController: TodoListViewController())
+        navigationBar.navigationBar.barTintColor = #colorLiteral(red: 0.3098039216, green: 0.5333333333, blue: 0.568627451, alpha: 1)
+        navigationBar.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black, NSAttributedString.Key.font:UIFont(name: "Apple SD Gothic Neo Bold", size: 20) as Any]
+        window?.rootViewController = navigationBar
         window?.makeKeyAndVisible()
         
     }
