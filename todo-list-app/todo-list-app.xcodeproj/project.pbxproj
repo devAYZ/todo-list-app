@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045AFFFC25E43491008A6EA6 /* ViewListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045AFFFB25E43491008A6EA6 /* ViewListsViewController.swift */; };
 		046EC58A25E4211800A44EFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046EC58925E4211800A44EFC /* AppDelegate.swift */; };
 		046EC58C25E4211800A44EFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046EC58B25E4211800A44EFC /* SceneDelegate.swift */; };
 		046EC59425E4211800A44EFC /* todo_list_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 046EC59225E4211800A44EFC /* todo_list_app.xcdatamodeld */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		045AFFFB25E43491008A6EA6 /* ViewListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewListsViewController.swift; sourceTree = "<group>"; };
 		046EC58625E4211800A44EFC /* todo-list-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "todo-list-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		046EC58925E4211800A44EFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		046EC58B25E4211800A44EFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				046EC5AA25E4236F00A44EFC /* TodoListViewController.swift */,
+				045AFFFB25E43491008A6EA6 /* ViewListsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				046EC58A25E4211800A44EFC /* AppDelegate.swift in Sources */,
 				046EC58C25E4211800A44EFC /* SceneDelegate.swift in Sources */,
 				046EC59425E4211800A44EFC /* todo_list_app.xcdatamodeld in Sources */,
+				045AFFFC25E43491008A6EA6 /* ViewListsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
