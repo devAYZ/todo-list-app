@@ -29,8 +29,6 @@ class HomePageViewController: UIViewController {
         viewLists.layer.cornerRadius = 8
         viewLists.clipsToBounds = true
         viewLists.titleLabel?.font = UIFont(name: "Apple SD Gothic Neo Bold", size: 25)
-//        viewLists.addTarget(self, action: #selector(viewList), for: .touchUpInside)
-        
         viewLists.addTarget(self, action: #selector( viewList(_:) ), for: .touchUpInside)
         viewLists.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         return viewLists
@@ -54,7 +52,6 @@ class HomePageViewController: UIViewController {
 
     }
 
-    
     @objc func viewList(_ sender: Any) {
         
         let viewList = UINavigationController(rootViewController: TodoListTableViewController() )
@@ -75,6 +72,4 @@ class HomePageViewController: UIViewController {
             viewTodoLists.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7)
         ])
     }
-    
-
 }
