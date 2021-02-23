@@ -51,6 +51,8 @@ class HomePageViewController: UIViewController {
     }()
     
     @objc func addList() {
+        addTaskButton()
+        self.present(todoAlert, animated: true, completion: nil)
 
     }
 

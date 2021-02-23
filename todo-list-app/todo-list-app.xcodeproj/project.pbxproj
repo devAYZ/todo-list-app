@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045A000B25E57860008A6EA6 /* AlertTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A000A25E57860008A6EA6 /* AlertTextField.swift */; };
 		046EC58A25E4211800A44EFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046EC58925E4211800A44EFC /* AppDelegate.swift */; };
 		046EC58C25E4211800A44EFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046EC58B25E4211800A44EFC /* SceneDelegate.swift */; };
 		046EC59425E4211800A44EFC /* todo_list_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 046EC59225E4211800A44EFC /* todo_list_app.xcdatamodeld */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		045A000A25E57860008A6EA6 /* AlertTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTextField.swift; sourceTree = "<group>"; };
 		046EC58625E4211800A44EFC /* todo-list-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "todo-list-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		046EC58925E4211800A44EFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		046EC58B25E4211800A44EFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				046EC58B25E4211800A44EFC /* SceneDelegate.swift */,
 				046EC59725E4211C00A44EFC /* LaunchScreen.storyboard */,
 				046EC59A25E4211C00A44EFC /* Info.plist */,
+				045A000A25E57860008A6EA6 /* AlertTextField.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				046EC58A25E4211800A44EFC /* AppDelegate.swift in Sources */,
 				046EC58C25E4211800A44EFC /* SceneDelegate.swift in Sources */,
 				046EC59425E4211800A44EFC /* todo_list_app.xcdatamodeld in Sources */,
+				045A000B25E57860008A6EA6 /* AlertTextField.swift in Sources */,
 				046EC5B425E446F500A44EFC /* TodoListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
