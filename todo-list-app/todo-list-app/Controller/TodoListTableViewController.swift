@@ -11,6 +11,7 @@ class TodoListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         navigationItem.title = "Todo-List"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
@@ -28,12 +29,11 @@ class TodoListTableViewController: UITableViewController {
         
         return 0
     }
+
     
     @objc func addButtonTapped() {
-        
+        addTaskButton()
+        self.present(todoAlert, animated: true, completion: nil)
     }
-
-
-
 
 }
