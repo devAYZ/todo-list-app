@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 class TodoListTableViewController: UITableViewController {
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +40,38 @@ class TodoListTableViewController: UITableViewController {
     }
     
     func getAllItems() {
-        
+        do {
+            let items = try context.fetch(TodoListItem.fetchRequest())
+        }
+        catch {
+            //
+        }
     }
     
     func createItem(name: String) {
         
+        let newItem = TodoListItem(context: context)
+        newItem.name = name
+        newItem.createdAt = Date()
+        
+        do {
+            try context.save()
+        }
+        catch {
+            //
+        }
+        
     }
     
     func deleteItem(item: TodoListItem) {
+        
+        context.delete(item)
+        do {
+            try context.save()
+        }
+        catch {
+            //
+        }
         
     }
     
