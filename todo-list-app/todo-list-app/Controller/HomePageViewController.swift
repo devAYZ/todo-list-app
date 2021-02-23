@@ -7,6 +7,8 @@
 import UIKit
 
 class HomePageViewController: UIViewController {
+    
+    let test = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
