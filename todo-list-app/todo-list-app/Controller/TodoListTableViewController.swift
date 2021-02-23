@@ -13,6 +13,8 @@ class TodoListTableViewController: UITableViewController {
         super.viewDidLoad()
 
         navigationItem.title = "Todo-List"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItem?.tintColor = .black
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 
@@ -26,17 +28,10 @@ class TodoListTableViewController: UITableViewController {
         
         return 0
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    @objc func addButtonTapped() {
+        
     }
-    */
-
 
 
 
