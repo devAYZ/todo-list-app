@@ -13,15 +13,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
+        // MARK: - New Windows
         guard let windowScene = scene as? UIWindowScene else { return }
-        
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window = UIWindow(windowScene: windowScene)
         window?.windowScene = windowScene
         
-//        let homeVC = UINavigationController(rootViewController: HomePageViewController())
         let homeVC = HomePageViewController()
         window?.rootViewController = homeVC
-        
         window?.makeKeyAndVisible()
         
     }

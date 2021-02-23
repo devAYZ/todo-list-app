@@ -54,7 +54,6 @@ class HomePageViewController: UIViewController {
 
     }
 
-    
     @objc func viewList(_ sender: Any) {
         
         let viewList = UINavigationController(rootViewController: TodoListTableViewController() )
@@ -75,6 +74,4 @@ class HomePageViewController: UIViewController {
             viewTodoLists.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7)
         ])
     }
-    
-
 }
