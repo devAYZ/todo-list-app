@@ -48,8 +48,6 @@
 		046EC57D25E4211800A44EFC = {
 			isa = PBXGroup;
 			children = (
-				046EC5CD25E5B98700A44EFC /* TodoListItem+CoreDataClass.swift */,
-				046EC5CE25E5B98700A44EFC /* TodoListItem+CoreDataProperties.swift */,
 				046EC58825E4211800A44EFC /* todo-list-app */,
 				046EC58725E4211800A44EFC /* Products */,
 			);
@@ -66,12 +64,12 @@
 		046EC58825E4211800A44EFC /* todo-list-app */ = {
 			isa = PBXGroup;
 			children = (
-				046EC5A825E422C100A44EFC /* Supporting Files */,
-				046EC5A725E422B500A44EFC /* Assets */,
-				046EC5A625E4223800A44EFC /* Controller */,
-				046EC5A525E4222F00A44EFC /* View */,
 				046EC5A425E4222000A44EFC /* Model */,
-				046EC59225E4211800A44EFC /* todo_list_app.xcdatamodeld */,
+				046EC5A525E4222F00A44EFC /* View */,
+				046EC5A625E4223800A44EFC /* Controller */,
+				046EC5A725E422B500A44EFC /* Assets */,
+				046EC5A825E422C100A44EFC /* Supporting Files */,
+				046EC5D425E5BBAB00A44EFC /* Core Data File */,
 			);
 			path = "todo-list-app";
 			sourceTree = "<group>";
@@ -117,6 +115,16 @@
 				046EC59A25E4211C00A44EFC /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		046EC5D425E5BBAB00A44EFC /* Core Data File */ = {
+			isa = PBXGroup;
+			children = (
+				046EC5CD25E5B98700A44EFC /* TodoListItem+CoreDataClass.swift */,
+				046EC5CE25E5B98700A44EFC /* TodoListItem+CoreDataProperties.swift */,
+				046EC59225E4211800A44EFC /* todo_list_app.xcdatamodeld */,
+			);
+			name = "Core Data File";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
