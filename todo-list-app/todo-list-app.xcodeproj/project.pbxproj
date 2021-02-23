@@ -80,6 +80,7 @@
 		046EC5A525E4222F00A44EFC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				045A000A25E57860008A6EA6 /* AlertTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -108,7 +109,6 @@
 				046EC58B25E4211800A44EFC /* SceneDelegate.swift */,
 				046EC59725E4211C00A44EFC /* LaunchScreen.storyboard */,
 				046EC59A25E4211C00A44EFC /* Info.plist */,
-				045A000A25E57860008A6EA6 /* AlertTextField.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
