@@ -39,6 +39,8 @@ class TodoListTableViewController: UITableViewController {
         self.present(todoAlert, animated: true, completion: nil)
     }
     
+    // MARK: - Core Data
+    
     func getAllItems() {
         do {
             let items = try context.fetch(TodoListItem.fetchRequest())
@@ -75,7 +77,15 @@ class TodoListTableViewController: UITableViewController {
         
     }
     
-    func updateItem(item: TodoListItem) {
+    func updateItem(item: TodoListItem, newName: String) {
+        
+        item.name = newName
+        do {
+            try context.save()
+        }
+        catch {
+            //
+        }
         
     }
 }
