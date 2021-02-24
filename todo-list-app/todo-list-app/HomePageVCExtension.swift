@@ -42,17 +42,16 @@ extension HomePageViewController {
         let copyTodoListTableViewController = TodoListTableViewController()
         
         
-        let todoAlert = UIAlertController(title: "New Task", message: "Creaate new task", preferredStyle: .alert)
+        let todoAlert = UIAlertController(title: "CREATE ITEM", message: "Type Your New Todo Item", preferredStyle: .alert)
         
         todoAlert.addTextField(configurationHandler: nil)
         
-        let alertAction = UIAlertAction(title: "Save task", style: .cancel, handler: { _ in
+        let alertAction = UIAlertAction(title: "Save Item", style: .cancel, handler: { _ in
             
             guard let textfield = todoAlert.textFields?.first, let todoText = textfield.text, !todoText.isEmpty else { return }
             copyTodoListTableViewController.createItem(name: todoText)
             
         })
-        print("Button tapped")
         todoAlert.addAction(alertAction)
         
         present(todoAlert, animated: true, completion: nil)

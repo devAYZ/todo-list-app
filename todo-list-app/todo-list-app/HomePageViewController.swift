@@ -14,13 +14,10 @@ class HomePageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+                
+        view.backgroundColor = .white
         view.addSubview(viewListsButton)
         view.addSubview(addNewListButton)
-        
-        
-        view.backgroundColor = .white
-        navigationItem.title = "HOME PAGE"
-        navigationController?.navigationBar.prefersLargeTitles = false
         
         setupViewListButton()
         setupAddNewListButton()
