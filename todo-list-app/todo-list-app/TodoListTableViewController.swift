@@ -37,11 +37,6 @@ class TodoListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = models[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        /*
-        if let name = model.name, let date = model.createdAt  {
-            cell.textLabel?.text = "\(name)   @-\(date)"
-        }
-        */
         cell.textLabel?.text = model.name
         return cell
     }
@@ -49,6 +44,37 @@ class TodoListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+       
+        let item = models[indexPath.row]
+        
+        let editText = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
+       
+        let editAlertAction = UIAlertAction(title: "Edit", style: .default, handler: { _ in
+            let alert = UIAlertController(title: "Edit task", message: "Edit your task", preferredStyle: .alert)
+            alert.addTextField(configurationHandler: nil)
+                                                
+            alert.textFields?.first?.text = item.name
+            alert.addAction(UIAlertAction(title: "Save Task", style: .cancel, handler: { [weak self] _ in
+                guard let textfield = alert.textFields?.first, let newTask = textfield.text, !newTask.isEmpty else { return }
+                
+                self?.updateItem(item: item, newName: newTask)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        })
+        
+        let cancelAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil )
+        let deleteAlertAction = UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] _ in
+           
+            self?.deleteItem(item: item)
+        })
+        
+        editText.addAction(cancelAlertAction)
+        editText.addAction(deleteAlertAction)
+        editText.addAction(editAlertAction)
+        
+        present(editText, animated: true, completion: nil)
+        
+
     }
     
 
@@ -107,6 +133,7 @@ class TodoListTableViewController: UITableViewController {
         context.delete(item)
         do {
             try context.save()
+            getAllItems()
         }
         catch {
             //
@@ -119,6 +146,7 @@ class TodoListTableViewController: UITableViewController {
         item.name = newName
         do {
             try context.save()
+            getAllItems()
         }
         catch {
             //
