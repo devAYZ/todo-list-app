@@ -14,12 +14,12 @@ extension HomePageViewController {
         viewListsButton.setTitle("View All Lists", for: .normal)
         viewListsButton.isEnabled = true
         viewListsButton.translatesAutoresizingMaskIntoConstraints = false
-        viewListsButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        viewListsButton.setTitleColor(.white, for: .normal)
         viewListsButton.layer.cornerRadius = 8
         viewListsButton.clipsToBounds = true
         viewListsButton.titleLabel?.font = UIFont(name: "Apple SD Gothic Neo Bold", size: 25)
         viewListsButton.addTarget(self, action: #selector( viewList(_:) ), for: .touchUpInside)
-        viewListsButton.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        viewListsButton.backgroundColor = .systemOrange
         
     }
     
@@ -28,12 +28,12 @@ extension HomePageViewController {
         addNewListButton.setTitle("Add New List", for: .normal)
         addNewListButton.isEnabled = true
         addNewListButton.translatesAutoresizingMaskIntoConstraints = false
-        addNewListButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        addNewListButton.setTitleColor(.white, for: .normal)
         addNewListButton.layer.cornerRadius = 8
         addNewListButton.clipsToBounds = true
         addNewListButton.titleLabel?.font = UIFont(name: "Apple SD Gothic Neo Bold", size: 25)
         addNewListButton.addTarget(self, action: #selector(addList), for: .touchUpInside)
-        addNewListButton.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        addNewListButton.backgroundColor = .systemOrange
     
     }
     
