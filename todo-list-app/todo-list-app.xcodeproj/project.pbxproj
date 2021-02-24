@@ -17,6 +17,7 @@
 		046EC5CF25E5B98700A44EFC /* TodoListItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046EC5CD25E5B98700A44EFC /* TodoListItem+CoreDataClass.swift */; };
 		046EC5D025E5B98700A44EFC /* TodoListItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046EC5CE25E5B98700A44EFC /* TodoListItem+CoreDataProperties.swift */; };
 		046EC5E325E6A9F700A44EFC /* HomePageVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046EC5E225E6A9F700A44EFC /* HomePageVCExtension.swift */; };
+		046EC5E725E6AE4C00A44EFC /* TodoListTableVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046EC5E625E6AE4C00A44EFC /* TodoListTableVCExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		046EC5CD25E5B98700A44EFC /* TodoListItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoListItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		046EC5CE25E5B98700A44EFC /* TodoListItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoListItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		046EC5E225E6A9F700A44EFC /* HomePageVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageVCExtension.swift; sourceTree = "<group>"; };
+		046EC5E625E6AE4C00A44EFC /* TodoListTableVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTableVCExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				046EC5E225E6A9F700A44EFC /* HomePageVCExtension.swift */,
+				046EC5E625E6AE4C00A44EFC /* TodoListTableVCExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				046EC59425E4211800A44EFC /* todo_list_app.xcdatamodeld in Sources */,
 				046EC5D025E5B98700A44EFC /* TodoListItem+CoreDataProperties.swift in Sources */,
 				046EC5CF25E5B98700A44EFC /* TodoListItem+CoreDataClass.swift in Sources */,
+				046EC5E725E6AE4C00A44EFC /* TodoListTableVCExtension.swift in Sources */,
 				046EC5B425E446F500A44EFC /* TodoListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
