@@ -17,10 +17,14 @@ class TodoListTableViewController: UITableViewController {
         super.viewDidLoad()
     
         navigationItem.title = "Todo-List"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.orange]
+        navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         navigationItem.rightBarButtonItem?.tintColor = .systemOrange
-        navigationController?.navigationBar.prefersLargeTitles = true
+       
         
         getAllItems()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
