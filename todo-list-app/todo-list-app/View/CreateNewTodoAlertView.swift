@@ -1,6 +1,6 @@
 
 import UIKit
-
+ 
 var todoAlert = UIAlertController()
 
 func addTaskButton() {
@@ -9,7 +9,7 @@ func addTaskButton() {
     
     todoAlert.addTextField(configurationHandler: nil)
     
-    let alertAction = UIAlertAction(title: "Save task", style: .cancel, handler: { [] _ in
+    let alertAction = UIAlertAction(title: "Save task", style: .cancel, handler: { _ in
         
         guard let textfield = todoAlert.textFields?.first, let todoText = textfield.text, !todoText.isEmpty else { return }
         

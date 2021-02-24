@@ -16,18 +16,23 @@ class TodoListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+    
         navigationItem.title = "Todo-List"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         navigationItem.rightBarButtonItem?.tintColor = .black
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
     }
 
     // MARK: - Table view data source
 //    override func numberOfSections(in tableView: UITableView) -> Int {
 //        return 0
 //    }
+    
+//    tableView.r
+    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -41,12 +46,23 @@ class TodoListTableViewController: UITableViewController {
         return cell
     }
     
-    
     @objc func addButtonTapped() {
-        addTaskButton()
-        self.present(todoAlert, animated: true, completion: nil)
-    }
     
+        let todoAlert = UIAlertController(title: "CREATE ITEM", message: "Type Your New Todo Item", preferredStyle: .alert)
+        
+        todoAlert.addTextField(configurationHandler: nil)
+        
+        let alertAction = UIAlertAction(title: "Save Item", style: .cancel, handler: { [weak self] _ in
+            
+            guard let textfield = todoAlert.textFields?.first, let todoText = textfield.text, !todoText.isEmpty else { return }
+            
+            self?.createItem(name: todoText)
+        })
+        
+        todoAlert.addAction(alertAction)
+        
+        present(todoAlert, animated: true, completion: nil)
+    }
     
     // MARK: - Core Data
     
@@ -72,6 +88,7 @@ class TodoListTableViewController: UITableViewController {
         
         do {
             try context.save()
+            getAllItems()
         }
         catch {
             //
