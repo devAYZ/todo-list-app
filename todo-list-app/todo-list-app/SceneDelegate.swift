@@ -18,6 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.windowScene = windowScene
         
+        self.window!.tintColor = UIColor.systemOrange
+        
         let homeVC = HomePageViewController()
         window?.rootViewController = homeVC
         window?.makeKeyAndVisible()
