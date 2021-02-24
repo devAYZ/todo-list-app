@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 
 class TodoListTableViewController: UITableViewController {
+    public static let copyTodoListTableViewController = TodoListTableViewController()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -22,17 +23,11 @@ class TodoListTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem?.tintColor = .black
         navigationController?.navigationBar.prefersLargeTitles = true
         
+        getAllItems()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
     }
 
     // MARK: - Table view data source
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 0
-//    }
-    
-//    tableView.r
-    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -42,11 +37,22 @@ class TodoListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = models[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        /*
+        if let name = model.name, let date = model.createdAt  {
+            cell.textLabel?.text = "\(name)   @-\(date)"
+        }
+        */
         cell.textLabel?.text = model.name
         return cell
     }
     
-    @objc func addButtonTapped() {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+
+    @objc public func addButtonTapped() {
     
         let todoAlert = UIAlertController(title: "CREATE ITEM", message: "Type Your New Todo Item", preferredStyle: .alert)
         

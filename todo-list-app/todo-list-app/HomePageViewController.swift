@@ -51,8 +51,12 @@ class HomePageViewController: UIViewController {
     }()
     
     @objc func addList() {
-        addTaskButton()
-        self.present(todoAlert, animated: true, completion: nil)
+        
+        let copyTodoListTableViewController = TodoListTableViewController()
+        
+        copyTodoListTableViewController.addButtonTapped()
+        
+//        self.present(todoAlert, animated: true, completion: nil)
 
     }
 
