@@ -7,6 +7,8 @@
 import UIKit
 
 class HomePageViewController: UIViewController {
+    
+    let test = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +51,12 @@ class HomePageViewController: UIViewController {
     }()
     
     @objc func addList() {
-        addTaskButton()
-        self.present(todoAlert, animated: true, completion: nil)
+        
+        let copyTodoListTableViewController = TodoListTableViewController()
+        
+        copyTodoListTableViewController.addButtonTapped()
+        
+//        self.present(todoAlert, animated: true, completion: nil)
 
     }
 
