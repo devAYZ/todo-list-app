@@ -65,7 +65,6 @@ class HomePageViewController: UIViewController {
             copyTodoListTableViewController.createItem(name: todoText)
 
         })
-        print("Button tapped")
         todoAlert.addAction(alertAction)
 
         present(todoAlert, animated: true, completion: nil)
